@@ -2,7 +2,7 @@
 const express = require('express');
 const uuid = require('uuid/v4');
 const session = require('express-session');
-
+const FileStore = require('session-file-store')(session);
 
 //create the server
 const app = express();
@@ -14,6 +14,7 @@ app.use(session({
         console.log(req.sessionID);
         return uuid(); // use uuid for session id
     },
+    store: new FileStore(),
     secret:'keyboard cat', //TODO: Change for production.
     resave:false,
     saveUninitialized: true

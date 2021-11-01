@@ -1,0 +1,7 @@
+Next task
+---------
+Normally, DB would act as session store.
+Here we use text files. 'session-file-store' (glue between middleware and DB)
+
+server $ npm install session-file-store --save
+
